@@ -19,6 +19,17 @@ public class ArrayUtils {
         return temp;
     }
 
+
+    public static int[] genRanMas(int size, int range){
+        int[] mas = new int[size];
+        for (int i = 0; i < size; i++) {
+            mas[i] = (int)(Math.random() * range);
+        }
+
+        return mas;
+
+    }
+
     public static void print(int[] mas){
         System.out.println(toString(mas));
     }
@@ -114,8 +125,28 @@ public class ArrayUtils {
         return res;
     }
 
-    public static void sort(int[] mas){
+    public static void sortQuick(int[] mas){
         Arrays.sort(mas); // quick
+    }
+
+
+    public static void selectionSort(int[] mas){
+        for (int i = 0; i < mas.length; i++) {
+
+            int minI = i;
+            //find min
+            for (int j = i + 1; j < mas.length; j++) {
+                if(mas[minI] > mas[j]){
+                    minI = j;
+                }
+            }
+
+            //swap
+            int temp = mas[i];
+            mas[i] = mas[minI];
+            mas[minI] = temp;
+
+        }
     }
 
 

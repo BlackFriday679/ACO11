@@ -1,5 +1,6 @@
-package ua.artcode.university.model;
+package ua.artcode.university.controller;
 
+import ua.artcode.university.controller.IGroupController;
 import ua.artcode.university.model.additional.sort.HumanBirthDayComporator;
 import ua.artcode.university.model.common.Address;
 import ua.artcode.university.model.role.Student;
@@ -7,26 +8,28 @@ import ua.artcode.university.model.role.Student;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-/**
- * Created by serhii on 23.01.16.
- */
-public class Group {
+
+public class GroupControllerImpl implements IGroupController {
 
     private String groupName;
     private ArrayList<Student> students = new ArrayList<>();
 
-    public Group(String groupName) {
+
+    public GroupControllerImpl(String groupName) {
         this.groupName = groupName;
     }
 
+    @Override
     public void addStudent(Student greenStudent){
         students.add(greenStudent);
     }
 
+    @Override
     public Student deleteLastStudent(){
         return students.remove(students.size() - 1);
     }
 
+    @Override
     public Student findById(String id){
         if(id == null){
             System.err.println("id is null");
@@ -44,6 +47,7 @@ public class Group {
         return null;
     }
 
+    @Override
     public Student[] filterByName(String name){
         ArrayList<Student> res = new ArrayList<>();
 
@@ -58,6 +62,7 @@ public class Group {
         return res.toArray(new Student[res.size()]);
     }
 
+    @Override
     public Student[] filterByCity(String city){
         ArrayList<Student> res = new ArrayList<>();
 
@@ -72,6 +77,7 @@ public class Group {
         return toArr(res);
     }
 
+    @Override
     public String asString(){
         String res = "GROUP NAME " + groupName +
                 "\n"+ "Count " + students.size() + "\n";
@@ -89,10 +95,12 @@ public class Group {
         return groupName;
     }
 
+    @Override
     public int getSize(){
         return students.size();
     }
 
+    @Override
     public Student[] sortByName() {
         Student[] forSort = toArr(students);
 
@@ -101,6 +109,7 @@ public class Group {
         return forSort;
     }
 
+    @Override
     public Student[] sortByDate() {
         Student[] forSort = toArr(students);
 
@@ -109,7 +118,8 @@ public class Group {
         return forSort;
     }
 
-    private Student[] toArr(ArrayList<Student> al){
+    @Override
+    public Student[] toArr(ArrayList<Student> al){
         return al.toArray(new Student[al.size()]);
     }
 

@@ -30,6 +30,10 @@ public class Student extends Human implements Comparable<Student>, IShooter, ISp
     public Student() {
     }
 
+    public Student(String idNum) {
+        this.idNum = idNum;
+    }
+
     // run before constructors
     {
         this.idNum = String.valueOf(idCounter);

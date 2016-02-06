@@ -1,6 +1,9 @@
 package ua.artcode.university.test;
 
-import ua.artcode.university.model.*;
+import ua.artcode.university.controller.GroupControllerImpl;
+import ua.artcode.university.controller.IGroupController;
+import ua.artcode.university.controller.MyRefactoredGroupController;
+import ua.artcode.university.model.GroupModel;
 import ua.artcode.university.model.common.Address;
 import ua.artcode.university.model.common.Contact;
 import ua.artcode.university.model.common.MyDate;
@@ -26,7 +29,8 @@ public class TestGroup {
                         new Address("UA", "Odessa", "derebasovskaya st", 2),
                         new Contact("+34300000", null));
 
-        Group group = new Group("ACO-11");
+
+        IGroupController group = new MyRefactoredGroupController(new GroupModel("TestGroupModel" , 0));
 
         group.addStudent(student1);
         group.addStudent(student2);
@@ -66,7 +70,7 @@ public class TestGroup {
                         new Address("UA", "Odessa", "derebasovskaya st", 2),
                         new Contact("+34300000", null))};
 
-        Group forSort = new Group("my");
+        IGroupController forSort = new GroupControllerImpl("my");
         for (int i = 0; i < masForSort.length; i++) {
             forSort.addStudent(masForSort[i]);
         }
@@ -86,7 +90,7 @@ public class TestGroup {
                         new Address("UA", "Odessa", "derebasovskaya st", 2),
                         new Contact("+34300000", null))};
 
-        Group forSort = new Group("my");
+        IGroupController forSort = new GroupControllerImpl("my");
         for (int i = 0; i < masForSort.length; i++) {
             forSort.addStudent(masForSort[i]);
         }
