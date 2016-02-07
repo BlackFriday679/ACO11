@@ -30,5 +30,9 @@ public class TestTree {
 
 
         Link dir1 = new Link(4,"dir1", manag1,manag2,manag3,manag4);
+
+        TreeOperations operations = new TreeOperationImpl();
+        Integer res = operations.getAmount(dir1);
+        System.out.println(res);
     }
 }

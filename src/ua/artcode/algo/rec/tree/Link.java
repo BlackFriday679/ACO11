@@ -34,10 +34,23 @@ public class Link {
         this.children = children;
     }
 
+    public Object getData() {
+        return data;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
+
+    public List<Link> getChildren() {
+        return children;
+    }
+
     // varags
     public void addAll(Link...links){
         Link[] mas = links;
-        this.children = new ArrayList<>();
-
+        for (Link link : mas) {
+            children.add(link);
+        }
     }
 }
