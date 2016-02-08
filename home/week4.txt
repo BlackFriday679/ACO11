@@ -1,0 +1,24 @@
+1. Recursion, Dynamic Data Structures
+
+	SOLID
+	OOD - Design Patterns
+		book Head First Design Patterns
+		learn previous work patterns
+
+
+	Visualiztion 
+	http://www.cs.usfca.edu/~galles/visualization/Algorithms.html
+	http://visualgo.net/
+
+	Use code visualalizer and debug
+
+
+2. http://codingbat.com/java/Recursion-1
+	min 15 tasks
+
+3. Implement each method of NodeUtils class via loops and recursion
+
+4. Discover next mindmap
+ https://drive.google.com/open?id=0B3pUqYFBBsi-a0s0UHp1S1dOc0k
+
+5. Need more tasks, ask me!
