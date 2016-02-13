@@ -45,7 +45,7 @@ public class ArrayUtils {
         return min;
     }
 
-    // find index of first el
+    // binaryFind index of first el
     public static int indexOf(int[] target, int el){
 
         if(target == null){
@@ -134,7 +134,7 @@ public class ArrayUtils {
         for (int i = 0; i < mas.length; i++) {
 
             int minI = i;
-            //find min
+            //binaryFind min
             for (int j = i + 1; j < mas.length; j++) {
                 if(mas[minI] > mas[j]){
                     minI = j;
