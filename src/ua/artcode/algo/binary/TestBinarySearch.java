@@ -6,9 +6,6 @@ import ua.artcode.utils.time_counter.TimeCounter;
 
 import java.util.Arrays;
 
-/**
- * Created by master on 13.02.16.
- */
 public class TestBinarySearch {
 
     public static void main(String[] args) {
