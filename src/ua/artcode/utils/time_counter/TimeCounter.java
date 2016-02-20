@@ -16,10 +16,10 @@ public class TimeCounter {
     }
 
     public String countActionTime(){
-        long start = System.nanoTime();
+        long start = System.currentTimeMillis();
         timeAction.callAction();
-        long end = System.nanoTime();
-        return "nanos " + (end - start);
+        long end = System.currentTimeMillis();
+        return "millis " + (end - start);
     }
 
 
