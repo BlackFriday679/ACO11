@@ -10,8 +10,8 @@ import java.io.FileNotFoundException;
  */
 public class TestIOUtils {
 
-    public static final String FILE_SOURCE = "/home/master/dev/write204.tar.gz";
-    public static final String FILE_DESTINATION = "write204_copy.tar.gz";
+    public static final String FILE_SOURCE = "/home/serhii/temp/imgo.jpg";
+    public static final String FILE_DESTINATION = "imgo.jpg";
 
     public static void main(String[] args) {
         TimeCounter counter = new TimeCounter(() -> {

@@ -3,6 +3,7 @@ package ua.artcode.university.controller;
 import ua.artcode.university.model.role.Student;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by serhii on 06.02.16.
@@ -26,5 +27,7 @@ public interface IGroupController {
 
     Student[] sortByDate();
 
-    Student[] toArr(ArrayList<Student> al);
+    Student[] toArr(List<Student> al);
+
+    void saveToFile(String path);
 }

@@ -19,8 +19,9 @@ import ua.artcode.world.role.IShooter;
 import ua.artcode.world.role.ISportsman;
 
 import javax.security.auth.Subject;
+import java.io.Serializable;
 
-public class Student extends Human implements Comparable<Student>, IShooter, ISportsman, IAlcoholic {
+public class Student extends Human implements Serializable,Comparable<Student>, IShooter, ISportsman, IAlcoholic {
 
     private static double monthMoney = 790;
     private static int idCounter = 0;

@@ -8,7 +8,9 @@ import ua.artcode.university.model.common.Address;
 import ua.artcode.university.model.common.Contact;
 import ua.artcode.university.model.common.MyDate;
 import ua.artcode.university.model.role.Student;
+import ua.artcode.week6.day1.io.IOUtils;
 
+import java.io.File;
 import java.util.Arrays;
 
 /**
@@ -57,6 +59,8 @@ public class TestGroup {
 
         sortDateTest();
 
+        testSaveStudents();
+
     }
 
     private static void sortNameTest() {
@@ -77,6 +81,29 @@ public class TestGroup {
 
         Student[] sorted = forSort.sortByName();
         System.out.println(Arrays.toString(sorted));
+    }
+
+    private static void testSaveStudents(){
+
+        Student[] mas = {
+                new Student("Oleg", new MyDate(1987,6,13),
+                        new Address("UA", "Kiev", "peremogy sqr", 34),
+                        new Contact("+343434334", null)),
+                new Student("Andrey", new MyDate(1990,12,22),
+                        new Address("UA", "Odessa", "derebasovskaya st", 2), new Contact("+34300000", null)),
+                new Student("Serhii", new MyDate(1970,4,23),
+                        new Address("UA", "Odessa", "derebasovskaya st", 2),
+                        new Contact("+34300000", null))};
+
+        IGroupController controller = new GroupControllerImpl("my");
+        for (int i = 0; i < mas.length; i++) {
+            controller.addStudent(mas[i]);
+        }
+        String path = "temp/student.txt";
+        controller.saveToFile(path);
+
+        File studentsFile = new File(path);
+        System.out.println(studentsFile.length() != 0);
     }
 
     private static void sortDateTest() {

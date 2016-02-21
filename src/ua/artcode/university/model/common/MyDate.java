@@ -1,9 +1,11 @@
 package ua.artcode.university.model.common;
 
+import java.io.Serializable;
+
 /**
  * Created by serhii on 23.01.16.
  */
-public class MyDate {
+public class MyDate implements Serializable {
 
     private int year;
     private int month;

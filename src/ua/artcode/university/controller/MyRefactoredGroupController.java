@@ -33,7 +33,7 @@ public class MyRefactoredGroupController implements IGroupController {
     public Student findById(String id) {
         // -1
         int index = groupModel.getStudents().indexOf(new Student());
-        return groupModel.getStudents().get(index);
+        return /*groupModel.getStudents().get(index)*/null;
     }
 
     @Override
@@ -67,7 +67,13 @@ public class MyRefactoredGroupController implements IGroupController {
     }
 
     @Override
-    public Student[] toArr(ArrayList<Student> al) {
-        return null;
+    public Student[] toArr(List<Student> al) {
+        return new Student[0];
     }
+
+    @Override
+    public void saveToFile(String path) {
+
+    }
+
 }

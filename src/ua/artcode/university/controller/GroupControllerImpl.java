@@ -4,15 +4,17 @@ import ua.artcode.university.controller.IGroupController;
 import ua.artcode.university.model.additional.sort.HumanBirthDayComporator;
 import ua.artcode.university.model.common.Address;
 import ua.artcode.university.model.role.Student;
+import ua.artcode.week6.day1.io.IOUtils;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 
 public class GroupControllerImpl implements IGroupController {
 
     private String groupName;
-    private ArrayList<Student> students = new ArrayList<>();
+    private List<Student> students = new ArrayList<>();
 
 
     public GroupControllerImpl(String groupName) {
@@ -119,8 +121,15 @@ public class GroupControllerImpl implements IGroupController {
     }
 
     @Override
-    public Student[] toArr(ArrayList<Student> al){
+    public Student[] toArr(List<Student> al){
         return al.toArray(new Student[al.size()]);
+    }
+
+    @Override
+    public void saveToFile(String path) {
+        for (Student student : students) {
+            IOUtils.save(student, path);
+        }
     }
 
 }

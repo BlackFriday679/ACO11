@@ -4,10 +4,12 @@ import ua.artcode.university.model.common.Address;
 import ua.artcode.university.model.common.Contact;
 import ua.artcode.university.model.common.MyDate;
 
+import java.io.Serializable;
+
 /**
  * Created by serhii on 30.01.16.
  */
-public class Human {
+public class Human implements Serializable {
 
 
     private String name;

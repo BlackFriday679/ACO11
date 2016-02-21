@@ -1,9 +1,11 @@
 package ua.artcode.university.model.common;
 
+import java.io.Serializable;
+
 /**
  * Created by serhii on 23.01.16.
  */
-public class Contact {
+public class Contact implements Serializable {
 
     private String phone;
     private String email;
