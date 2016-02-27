@@ -19,6 +19,27 @@ public class IPhone {
         this.version = version;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        IPhone iPhone = (IPhone) o;
+
+        if (ram != iPhone.ram) return false;
+        if (rom != iPhone.rom) return false;
+        return !(version != null ? !version.equals(iPhone.version) : iPhone.version != null);
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = ram;
+        result = 31 * result + rom;
+        result = 31 * result + (version != null ? version.hashCode() : 0);
+        return result;
+    }
+
     public int getRam() {
         return ram;
     }
