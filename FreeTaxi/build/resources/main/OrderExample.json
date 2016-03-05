@@ -1,0 +1,32 @@
+{
+  "id": 0,
+  "from": {
+    "city": "Kiev",
+    "street": "Ushin",
+    "num": "5a",
+    "lat": null,
+    "lon": null
+  },
+  "to": {
+    "city": "odessa",
+    "street": "Dereb",
+    "num": "1",
+    "lat": null,
+    "lon": null
+  },
+  "orderState": "DONE",
+  "price": 1000,
+  "distance": 500.0,
+  "client": {
+    "id": 0,
+    "phone": "+30933332312",
+    "name": "user",
+    "pass": "1234"
+  },
+  "driver": {
+    "id": 1,
+    "phone": "+30933332312",
+    "name": "driver",
+    "pass": "1234"
+  }
+}
