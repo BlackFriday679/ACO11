@@ -11,11 +11,11 @@ public class MyHashSet<E> implements Set<E> {
 
     public static final int DEFAULT_TABLE_SIZE = 16;
 
-    private Node[] table;
+    private Node<E>[] table;
     private int size;
 
     public MyHashSet() {
-        table = (Node[]) new Object[DEFAULT_TABLE_SIZE];
+        table = new Node[DEFAULT_TABLE_SIZE];
     }
 
     @Override
@@ -137,11 +137,11 @@ public class MyHashSet<E> implements Set<E> {
         return 0;
     }
 
-    private class Node {
-        E el;
-        Node next;
+    private static class Node<T> {
+        T el;
+        Node<T> next;
 
-        public Node(E el, Node next) {
+        public Node(T el, Node next) {
             this.el = el;
             this.next = next;
         }
